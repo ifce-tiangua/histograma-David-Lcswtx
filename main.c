@@ -20,7 +20,7 @@ void imprime_histograma(char *a[], int vendas[], int produto){
 void v_histograma(char *a[], int venda, int produto){
 
     for(int i = 0; i < venda; i++){
-        if(a[venda][i] >= 0)
+        if(a[produto][i] >= 0)
         {
         a[produto][i] = '*';
         }
