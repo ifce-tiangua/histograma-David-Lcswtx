@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 void imprime_histograma(char* a[], int vendas[], int produto){
     
     for(int i = 0; i < produto; i++) {
@@ -40,6 +39,7 @@ int main(){
     scanf("%d", &produto);  
     
     if(produto <= 0){
+        printf("vazio\n");
         return 0;
     }
     
