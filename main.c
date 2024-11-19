@@ -50,7 +50,7 @@ int main(void){
         }else
         {
 
-            hist[i] = (char *)malloc(vendas[i] * sizeof(char));
+            hist[i] = (char *)malloc((vendas[i] + 1) * sizeof(char));
 
             v_histograma(hist, vendas[i], i);
         }
