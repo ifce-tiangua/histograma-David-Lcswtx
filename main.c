@@ -33,7 +33,9 @@ int main(void){
     int i, p;
     
     scanf("%d", &p);
-
+    if(p <= 0){
+        return 0;
+    }else{
     int vendas[p];
     char *hist[p];
 
@@ -60,6 +62,6 @@ int main(void){
     for(i = 0; i < p; i++){
         free(hist[i]);
     }
-
+}
     return 0;
 }
