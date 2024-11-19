@@ -30,16 +30,16 @@ void v_histograma(char *a[], int venda, int produto){
 
 int main(void){
 
-    int i, p;
+    int i, produto;
     
-    scanf("%d", &p);
-    if(p <= 0){
+    scanf("%d", &produto);
+    if(produto <= 0){
         return 0;
     }else{
-    int vendas[p];
-    char *hist[p];
+    int vendas[produto];
+    char *hist[produto];
 
-    for(i = 0; i < p; i++){
+    for(i = 0; i < produto; i++){
 
         scanf("%d", &vendas[i]);
         
@@ -57,9 +57,9 @@ int main(void){
     }
 
 
-    imprime_histograma(hist, vendas, p);
+    imprime_histograma(hist, vendas, produto);
     
-    for(i = 0; i < p; i++){
+    for(i = 0; i < produto; i++){
         free(hist[i]);
     }
 }
