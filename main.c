@@ -28,14 +28,16 @@ void v_histograma(char *a[], int venda, int produto){
 }
 
 
-int main(void){
+int main(){
 
     int i, produto;
     
     scanf("%d", &produto);
+    
     if(produto <= 0){
         return 0;
     }else{
+        
     int vendas[produto];
     char *hist[produto];
 
@@ -50,7 +52,7 @@ int main(void){
         }else
         {
 
-            hist[i] = (char *)malloc((vendas[i] + 1) * sizeof(char));
+            hist[i] = (char*)malloc((vendas[i] + 1) * sizeof(char));
 
             v_histograma(hist, vendas[i], i);
         }
