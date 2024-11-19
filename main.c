@@ -17,11 +17,13 @@ void imprime_histograma(char *a[], int vendas[], int produto){
     }
 }
 
-void v_histograma(char *a[], int q, int vendidos){
+void v_histograma(char *a[], int q, int produto){
 
     for(int i = 0; i < q; i++){
-
-        a[vendidos][i] = '*';
+        if(a[produto][i] >= 0)
+        {
+        a[produto][i] = '*';
+        }
     }
 }
 
@@ -33,7 +35,7 @@ int main(void){
     scanf("%d", &p);
 
     int vendas[p];
-    char *a[p];
+    char *hist[p];
 
     for(i = 0; i < p; i++){
 
@@ -41,21 +43,22 @@ int main(void){
         
         if (vendas[i] == 0){
 
-        a[i] = NULL;
+        hist[i] = NULL;
 
-        }else{
+        }else
+        {
 
-            a[i] = (char *)malloc( vendas[i] * sizeof(char) );
+            hist[i] = (char *)malloc(vendas[i] * sizeof(char));
 
-            v_histograma(a, vendas[i], i);
+            v_histograma(hist, vendas[i], i);
         }
     }
 
 
-    imprime_histograma(a, vendas, p);
+    imprime_histograma(hist, vendas, p);
     
     for(i = 0; i < p; i++){
-        free(a[i]);
+        free(hist[i]);
     }
 
     return 0;
